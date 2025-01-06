@@ -4,12 +4,12 @@ from nlp import extract_text_from_pdf, extract_data_from_text
 import pandas as pd
 
 # MongoDB connection details
-client = MongoClient('mongodb+srv://Jaganathan:ccc@clusterbeginj.s7behpd.mongodb.net/?retryWrites=true&w=majority&appName=ClusterBeginJ')
+client = MongoClient('mongodb+srv://Jaganathan:ccc@clusterbeginj.s7behpd.mongodb.net/?retryWrites=true&w=majority&appName=ClusterBeginJ&ssl=true',serverSelectionTimeoutMS=50000)
 db = client['ESG_DATA']  # Replace with your database name
 collection = db['Small_part']  # Replace with your collection name
 
 def main():
-    st.title("PDF Data Extraction")
+    st.title("Data Updating Tool")
     
     pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
     
